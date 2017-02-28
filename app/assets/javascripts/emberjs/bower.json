@@ -1,0 +1,6 @@
+{
+  "name": "emberjs",
+  "dependencies": {
+    "semantic-ui": "^2.2.9"
+  }
+}

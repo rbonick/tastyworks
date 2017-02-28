@@ -1,0 +1,28 @@
+<div class="ui basic segment">
+    <form class="ui form" {{action "submitForm" on="submit"}}>
+        <div class="field">
+            <label for="query">Search for a stock</label>
+            <input type="text" name="query">
+        </div>
+        <button class="ui button" type="submit">Submit</button>
+    </form>
+</div>
+
+<div class="ui basic segment">
+    <table class="ui celled table">
+        <thead>
+            <tr>
+                <th>Symbol</th>
+                <th>Company Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each stocks as |stock|}}
+                <tr>
+                    <td>{{ stock.symbol }}</td>
+                    <td>{{ stock.name }}</td>
+                </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</div>
