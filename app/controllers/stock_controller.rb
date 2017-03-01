@@ -7,7 +7,7 @@ class StockController < ApplicationController
     data = yahoo_client.historical_quotes(symbol, {start_date: Time::now-(24*60*60*30), end_date: Time::now, period: :daily }) # 10 days worth of data
 
     # Simplify data
-    data = data.map {|d| [d.trade_date.to_time, (d.open.to_f + d.close.to_f + d.high.to_f + d.low.to_f ) / 4]}
+    data = data.map {|d| {date: d.trade_date.to_time, price: ((d.open.to_f + d.close.to_f + d.high.to_f + d.low.to_f ) / 4).round(2) }}
 
     render :json => data
   end

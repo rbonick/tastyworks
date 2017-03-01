@@ -8,9 +8,13 @@ let App;
 Ember.MODEL_FACTORY_INJECTIONS = true;
 
 App = Ember.Application.extend({
-  modulePrefix: config.modulePrefix,
-  podModulePrefix: config.podModulePrefix,
-  Resolver
+    modulePrefix: config.modulePrefix,
+    podModulePrefix: config.podModulePrefix,
+    Resolver,
+    d3: {
+        // ember-cli-d3 version >= 0.7.0
+        plugins: {        }
+    }
 });
 
 loadInitializers(App, config.modulePrefix);

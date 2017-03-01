@@ -19,7 +19,7 @@
         <tbody>
             {{#each stocks as |stock|}}
                 <tr>
-                    <td>{{ stock.symbol }}</td>
+                    <td><a href="/history/{{ stock.symbol }}">{{ stock.symbol }}</a></td>
                     <td>{{ stock.name }}</td>
                 </tr>
             {{/each}}

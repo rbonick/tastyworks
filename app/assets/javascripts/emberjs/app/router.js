@@ -8,6 +8,7 @@ const Router = Ember.Router.extend({
 
 Router.map(function() {
   this.route('search', { path: '/'});
+  this.route('history', { path: '/history/:symbol'});
 });
 
 export default Router;
