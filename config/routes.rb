@@ -1,4 +1,4 @@
 Rails.application.routes.draw do
-  get '/search', to: 'search_controller#search'
-  get '/execute-search', to: 'search_controller#execute_search'
+  get '/history', to: 'stock#historical_data'
+  get '/execute-search', to: 'search#execute_search'
 end
