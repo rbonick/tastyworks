@@ -1,24 +1,35 @@
-# README
+# Tastyworks Coding Challenge
+### Setup and Startup
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This application has two part: Ruby on Rails, and Ember. Both must be running for the 
+application to work.
 
-Things you may want to cover:
+#### Rails
+First, ensure you are in the root of the directory (`/tastyworks`). This also assumes you
+have Ruby installed already.
 
-* Ruby version
+Note: `csv:import` takes a while. Grab a coffee, watch some TED Talks.
 
-* System dependencies
+```
+bundle install
+bundle exec rake db:migrate
+bundle exec rake csv:import 
+rails s
+```
 
-* Configuration
+#### Ember
+These steps assume you have Ember already installed. If you do not, you can get Ember
+by running `npm install -g ember-cli`.
 
-* Database creation
+```
+cd app/assets/javascripts/emberjs
+npm install
+bower install
+ember server
+```
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### Using the application
+To use, hit [http://localhost:4200/](http://localhost:4200/), where you can search for 
+a stock. Clicking a stock symbol from this screen will take you to the history for that
+stock. If you would llke to visit the history page directly, the format is 
+[http://localhost:4200/history/:symbol](http://localhost:4200/history/:symbol)
