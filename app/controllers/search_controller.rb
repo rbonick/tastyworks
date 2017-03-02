@@ -8,7 +8,7 @@ class SearchController < ApplicationController
     # Search for matching stocks
     # Returns first 20
     # Would add pagination but it is not in scope for this project
-    @stocks = Stock.ransack(symbol_start: query, name_start: query, m: 'or').result.first(20)
+    @stocks = Stock.ransack(symbol_start: query, name_start: query, m: 'or').result.sort_by{|stock| stock.name}.first(20)
 
     render :json => @stocks
   end
