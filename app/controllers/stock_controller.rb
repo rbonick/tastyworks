@@ -1,4 +1,5 @@
 class StockController < ApplicationController
+  # Fetches historical data for the given symbol
   def historical_data
     symbol = params[:symbol]
 

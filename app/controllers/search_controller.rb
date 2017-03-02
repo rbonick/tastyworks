@@ -6,6 +6,7 @@ class SearchController < ApplicationController
     query = params[:query]
 
     # Search for matching stocks
+    # Sorts by company name, ascending
     # Returns first 20
     # Would add pagination but it is not in scope for this project
     @stocks = Stock.ransack(symbol_start: query, name_start: query, m: 'or').result.sort_by{|stock| stock.name}.first(20)
